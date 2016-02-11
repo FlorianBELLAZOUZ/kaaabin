@@ -1,9 +1,13 @@
 {
   "name": "kaaabin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Binary Cripter and Decripter",
   "author": {
     "name": "Florian BELLAZOUZ",
     "email": "florian.bellazouz@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/florianbellazouz/kaaabin.git"
   }
 }
