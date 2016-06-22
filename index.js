@@ -1,9 +1,24 @@
+/**
+ * @class Bin
+ * Convert primitive value to binary.
+ *
+ * @constructor
+ * @example
+ * var bin = new Bin();
+ * bin.cript(4, 1);
+ */
 function Bin() {
   this.bin = '';
   this.out = {};
   this.utf8 = '';
 };
 
+/**
+ * Cript a flag on 7 bits.
+ * Use it to start your binary package to identify it.
+ * @param  {Integer} val the flag of the binary package
+ * @return {Bin}     retrun this to chain methodes.
+ */
 Bin.prototype.criptFlag = function(val) {
   var bin = val.toString(2);
 
@@ -24,6 +39,10 @@ Bin.prototype.criptFlag = function(val) {
   return this.bin;
 };
 
+/**
+ * Decript the 7 bits flag.
+ * @return {Integer} the flag.
+ */
 Bin.prototype.decriptFlag = function() {
   this.decript(8, 'flag');
   var a = this.out.flag.toString(2);
@@ -35,6 +54,12 @@ Bin.prototype.decriptFlag = function() {
   return this.out.flag;
 };
 
+/**
+ * Cript an Integer, and add it to the bin member.
+ * @param  {Integer} bit the number of bits to cript your integer.
+ * @param  {Interger} val the integer to cript
+ * @return {Bin}     return this Bin to chain methodes.
+ */
 Bin.prototype.cript = function(bit, val) {
   var val = Number(val);
 
@@ -43,7 +68,7 @@ Bin.prototype.cript = function(bit, val) {
     val = 0;
   }
 
-  var bin = Number(val).toString(2);
+  var bin = val.toString(2);
 
   // Ajouter le nombre de 0;
   while (bin.length < bit) {
