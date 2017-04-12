@@ -1,20 +1,16 @@
 {
   "name": "kaaabin",
-  "version": "0.0.3",
-  "description": "Binary Cripter and Decripter",
+  "version": "1.0.0",
+  "description": "A custom binary encodage",
   "author": {
     "name": "Florian BELLAZOUZ",
     "email": "florian.bellazouz@gmail.com"
   },
   "scripts": {
-    "doc": "jsdoc -t \"./node_modules/jaguarjs-jsdoc\" -c \"./doc.json\" index.js -d ./doc"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/florianbellazouz/kaaabin.git"
-  },
-  "devDependencies": {
-    "jaguarjs-jsdoc": "git+ssh://git@github.com/davidshimjs/jaguarjs-jsdoc.git",
-    "jsdoc": "^3.4.0"
   }
 }
