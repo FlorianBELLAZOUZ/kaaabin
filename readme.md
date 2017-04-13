@@ -11,12 +11,12 @@ decode::String=>Encodage=>Object
 
 Encodage::{
   keyOne:{
-    a:int(8),
-    b:string(13),
-    c:obj({a:int(1),b:string(2)}),
-    d:ints(4,4),
-    e:strings(4,13),
-    f:objs(4,{a:int(1),b:string(2)}),
+    a:'int-8', // or 8
+    b:'string-13', // or '13'
+    c:{a:1,b:'2'},
+    d:'ints-1-4', // or [1,4]
+    e:'strings-4-13', // or ['13',4]
+    f:[{a:int(1),b:string(2)},10],
     d:...
     ...
   },
