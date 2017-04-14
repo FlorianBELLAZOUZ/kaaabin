@@ -40,8 +40,8 @@ const decode = (string,encodage)=>{
   keys(encode).forEach(k=>{
     const e = encode[k]
     if(typeof e==='number'){
-      const chunks = chunkDecript(head,e)
-      obj[k]=decript(e,chunks,string)
+      const chunks = chunkToDecript(head,e)
+      obj[k]=decriptChunks(e,chunks,string)
       head += e
     }
   })
@@ -49,7 +49,7 @@ const decode = (string,encodage)=>{
   return unflat(obj)
 }
 
-const decript = (size,chunks,string)=>{
+const decriptChunks = (size,chunks,string)=>{
   let val = 0
 
   chunks.forEach(chunk=>{
@@ -61,7 +61,7 @@ const decript = (size,chunks,string)=>{
   return val
 }
 
-const chunkDecript = (head,count)=>{
+const chunkToDecript = (head,count)=>{
   const indexString = Math.floor(head/16)
   const headBuffer = head%16
   const headOver = 16-headBuffer
@@ -112,8 +112,6 @@ const stringSplitBits = (index,count,from,string)=>{
 }
 
 const pushBits = (intBuffer,decal,val)=>(intBuffer<<decal)|val
-const bitSize = num=>num===0?1:Math.floor(Math.log(num)/Math.log(2))+1
-const times = (func,n)=>{for(var i=n;i>0;i--)func(n-i)}
 const mapTimes = (func,n)=>(new Array(n)).fill(0).map((a,i)=>func(i))
 
 const flat = (obj,currentPath='',objOut={})=>{
@@ -144,4 +142,4 @@ const unflat = (obj,currentPath='',objOut={})=>{
 }
 
 module.exports = {encode,decode}
-module.exports._ = {intSplitBits,flat,unflat,objectToChunk,chunkDecript}
+module.exports._ = {intSplitBits,flat,unflat,objectToChunk,chunkToDecript}

@@ -67,99 +67,99 @@ describe('.objectToChunk::Object=>Chunks',()=>{
   })
 })
 
-describe('.chunkDecript::head:Int=>count:Int=>String',()=>{
+describe('.chunkToDecript::head:Int=>count:Int=>String',()=>{
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(0,18)
+    const chunks = Interne.chunkToDecript(0,18)
     chunks.should.be.deep.equal([[0,0,16],[1,0,2]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(6,18)
+    const chunks = Interne.chunkToDecript(6,18)
     chunks.should.be.deep.equal([[0,6,10],[1,0,8]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(16,1)
+    const chunks = Interne.chunkToDecript(16,1)
     chunks.should.be.deep.equal([[1,0,1]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(0,1)
+    const chunks = Interne.chunkToDecript(0,1)
     chunks.should.be.deep.equal([[0,0,1]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(15,1)
+    const chunks = Interne.chunkToDecript(15,1)
     chunks.should.be.deep.equal([[0,15,1]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(15,16)
+    const chunks = Interne.chunkToDecript(15,16)
     chunks.should.be.deep.equal([[0,15,1],[1,0,15]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(6,26)
+    const chunks = Interne.chunkToDecript(6,26)
     chunks.should.be.deep.equal([[0,6,10],[1,0,16]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(6,28)
+    const chunks = Interne.chunkToDecript(6,28)
     chunks.should.be.deep.equal([[0,6,10],[1,0,16],[2,0,2]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(6,28+16)
+    const chunks = Interne.chunkToDecript(6,28+16)
     chunks.should.be.deep.equal([[0,6,10],[1,0,16],[2,0,16],[3,0,2]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(6,28+16+6)
+    const chunks = Interne.chunkToDecript(6,28+16+6)
     chunks.should.be.deep.equal([[0,6,10],[1,0,16],[2,0,16],[3,0,8]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(6,28+16+14)
+    const chunks = Interne.chunkToDecript(6,28+16+14)
     chunks.should.be.deep.equal([[0,6,10],[1,0,16],[2,0,16],[3,0,16]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(0,16)
+    const chunks = Interne.chunkToDecript(0,16)
     chunks.should.be.deep.equal([[0,0,16]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(0,2)
+    const chunks = Interne.chunkToDecript(0,2)
     chunks.should.be.deep.equal([[0,0,2]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(16,1)
+    const chunks = Interne.chunkToDecript(16,1)
     chunks.should.be.deep.equal([[1,0,1]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(16,16)
+    const chunks = Interne.chunkToDecript(16,16)
     chunks.should.be.deep.equal([[1,0,16]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(16,32)
+    const chunks = Interne.chunkToDecript(16,32)
     chunks.should.be.deep.equal([[1,0,16],[2,0,16]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(16,64)
+    const chunks = Interne.chunkToDecript(16,64)
     chunks.should.be.deep.equal([[1,0,16],[2,0,16],[3,0,16],[4,0,16]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(16*11,64)
+    const chunks = Interne.chunkToDecript(16*11,64)
     chunks.should.be.deep.equal([[11,0,16],[12,0,16],[13,0,16],[14,0,16]])
   })
 
   it('should return chunks',()=>{
-    const chunks = Interne.chunkDecript(16*11,64+2)
+    const chunks = Interne.chunkToDecript(16*11,64+2)
     chunks.should.be.deep.equal([[11,0,16],[12,0,16],[13,0,16],[14,0,16],[15,0,2]])
   })
 })
